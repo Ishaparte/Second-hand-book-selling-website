@@ -33,7 +33,7 @@ nav a:hover {
 }
 .book-card {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 0.5fr 2fr;
     background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -43,7 +43,8 @@ nav a:hover {
 }
 .book-card img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: contain;
 }
 .book-details {
     padding: 1rem;
