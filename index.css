@@ -5,28 +5,133 @@ body {
     background-color: #f4f4f9;
     color: #333;
 }
-header {
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #4CAF50;
     color: white;
     padding: 1rem 2rem;
-    text-align: center;
+    align-items: center;
+    height: 90px;
 }
-nav {
+.logo{
+    line-height: 10px;
+}
+.logo h2{
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #f8f9fa;
+    
+    
+}
+.logo p{
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f8f9fa;
+}
+.nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    background-color: #333;
-    padding: 0.5rem 0;
+   gap: 15px;
 }
-nav a {
-    color: white;
+.nav a {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-weight: bold;
+    color: #f8f9fa;
     text-decoration: none;
-    margin: 0 1rem;
-    font-size: 1rem;
+    padding: 10px;
+    position: relative;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
 }
-nav a:hover {
-    text-decoration: underline;
+.nav a::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,#ffdd57,#ff6699);
+    transform: scaleX(0);
+    transition:transform 0.3s ease-in-out;
+}
+.nav a:hover::after{
+    transform: scaleX(1);
+}
+.nav a:hover {
+   color: #ffeb3b;
+   text-shadow: 0px 0px 5px rgba(255,235,59,0.7);
+}
+.hamburger{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+#menu-toggle{
+    display: none;
+}
+.hamburger span{
+  display: block;
+  width: 35px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s;
+  left: 90px;
+
+}
+
+@media screen and (max-width:851px){
+    .nav{
+         display: none;
+         flex-direction: column;
+         position: absolute;
+         top: 100px;
+         left: 0;
+         width: 100%;
+         background: linear-gradient(to bottom,#2d7a3e,#3fa34d);
+         box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+         border-radius: 5px;
+         text-align: center;
+    }
+    .nav a{
+        display: block;
+        padding: 15px;
+        position: relative;
+       text-decoration: none;
+       color: white;
+       position: relative;
+       transition: background 0.3s,transform 0.2s;
+    }
+    .nav a:hover{
+        color: white;
+        transform: scale(1.05);
+        text-decoration: none;
+    
+    }
+    .nav a::after{
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg,#ffdd57,#ff6699);
+        transform: scaleX(0);
+        transition:transform 0.3s ease-in-out;
+    }
+    .nav a:hover::after{
+        transform: scaleX(1);
+    }
+    .hamburger{
+        display: flex;
+    }
+
+    #menu-toggle:checked~ .nav{
+           display: flex;
+    }
+   
 }
 .container {
     max-width: 1200px;
