@@ -64,23 +64,81 @@ nav a:hover {
     color: #e63946;
     font-weight: bold;
 }
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #333;
+
+.footer {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #333;
     color: white;
-    margin-top: 2rem;
+    padding: 5px 20px;
+    text-align: center;
 }
-.button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #4CAF50;
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.newsletter {
+    margin: 20px;
+    
+}
+
+.subscribeform{
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter input {
+    padding: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.submitbutton{
+    max-width: 245px;
+    
+}
+.sec-nav{
+    padding: 3px;
+    color: white;
+}
+.sec-nav a{
+    color:white;
+    text-decoration: none;
+}
+.sec-nav a:hover{
+    text-decoration: underline;
+}
+.quick-contact {
+    text-align: left;
+    margin: 20px;
+    color: white;
+}
+
+.social-sharing a {
+    margin: 0 10px;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 0.5rem;
+    display: flex;
 }
-.button:hover {
-    background-color: #45a049;
+
+.social-sharing a:hover {
+    text-decoration: underline;
+}
+.social-icon{
+    padding: 5px 5px;
+    color: white;
+}
+.privacy {
+    margin: 10px 0;
+    color: white;
+}
+.privacy a{
+    text-decoration:none;
+    color:white;
+}
+.privacy a:hover{
+    text-decoration: underline;
+}
+.copyright {
+    margin-top: 10px;
 }
