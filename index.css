@@ -142,3 +142,28 @@ nav a:hover {
 .copyright {
     margin-top: 10px;
 }
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(255, 64, 108, 0.4);
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(255, 64, 108, 0.6);
+}
+
+.button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 3px 10px rgba(255, 64, 108, 0.3);
+}
