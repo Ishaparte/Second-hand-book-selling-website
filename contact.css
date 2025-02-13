@@ -1,0 +1,328 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+   
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    align-items: center;
+    height: 65px;
+    
+}
+.logo{
+    line-height: 20px;
+}
+.logo h2{
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #f8f9fa;
+    
+    
+}
+.logo p{
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f8f9fa;
+}
+.nav {
+    display: flex;
+   gap: 15px;
+}
+.nav a {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-weight: bold;
+    color: #f8f9fa;
+    text-decoration: none;
+    padding: 10px;
+    position: relative;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.nav a::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,#ffdd57,#ff6699);
+    transform: scaleX(0);
+    transition:transform 0.3s ease-in-out;
+}
+.nav a:hover::after{
+    transform: scaleX(1);
+}
+.nav a:hover {
+   color: #ffeb3b;
+   text-shadow: 0px 0px 5px rgba(255,235,59,0.7);
+}
+.ham{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+#menu{
+    display: none;
+}
+.ham span{
+  display: block;
+  width: 35px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s;
+  left: 90px;
+
+}
+
+@media screen and (max-width:851px){
+    .nav{
+         display: none;
+         flex-direction: column;
+         position: absolute;
+         top: 100px;
+         left: 0;
+         width: 100%;
+         background: linear-gradient(to bottom,#2d7a3e,#3fa34d);
+         box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+         border-radius: 5px;
+         text-align: center;
+    }
+    .nav a{
+        display: block;
+        padding: 15px;
+        position: relative;
+       text-decoration: none;
+       color: white;
+       position: relative;
+      
+    }
+    .nav a:hover{
+        color: white;
+        transform: scale(1.05);
+        text-decoration: none;
+    
+    }
+    .nav a::after{
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg,#ffdd57,#ff6699);
+        transform: scaleX(0);
+        transition:transform 0.3s ease-in-out;
+    }
+    .nav a:hover::after{
+        transform: scaleX(1);
+    }
+    .ham{
+        display: flex;
+    }
+
+    #menu:checked~ .nav{
+           display: flex;
+    }
+   
+}
+@media (max-width:675px){
+    .nav{
+        max-width: 100%;
+    }
+}
+.C-form{
+    margin-top: 40px;
+    background-color: white;
+    width: 400px;
+    padding: 40px;
+   box-shadow: 0 0 10px #1d3d1e;
+   box-sizing: border-box;
+}
+.C-form h1{
+    text-align: center;
+    color: #4CAF50;
+}
+.C-form label{
+    display: block;
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif ;
+    font-size: larger;
+  
+   
+}
+.C-form input, .C-form textarea{
+    width: 100%;
+    padding: 4px;
+    margin-top: 6px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+.C-form input:hover,.C-form textarea:hover{
+     transform: scale(1.02);
+    border: 1px solid #4CAF50;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.C-form input:focus , .C-form textarea:focus{
+     border-color: #4CAF50;
+     outline: none;
+}
+.C-form .book{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   margin-top: -10px;
+   gap: 12px;
+   vertical-align: top;
+
+}
+.C-form input[type="radio"]{
+    width: auto;
+    margin-right: 5px;
+   
+}
+
+.C-form textarea{
+    height: 80px;
+
+}
+.bttn{
+    display: flex;
+    justify-content: center;
+     margin-top: 30px;
+}
+.bttn button{
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    margin-right: 25px;
+    border-radius: 8px;
+    border: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: large;
+    transition: all 0.3s ease-in-out;
+}
+.bttn button:hover{
+    background-color: #337036;
+    transform: scale(1.05);
+    box-shadow: 0px 4px  8px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+@media  (max-width:414px) {
+    .C-form{
+        min-width: 100px;
+        margin: 30px;
+    }
+    
+    
+}
+.footer {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #333;
+    color: #FFFFFF;
+    padding: 5px 20px;
+    text-align: center;
+    width: 100vw;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+@media (max-width:758px){
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+.newsletter {
+    margin: 20px;
+    
+}
+
+.subscribeform{
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter input {
+    padding: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.submitbutton{
+    max-width: 245px;
+    
+    
+}
+.sec-nav{
+    padding: 3px;
+    color: white;
+}
+.sec-nav a{
+    color:white;
+    text-decoration: none;
+}
+.sec-nav a:hover{
+    text-decoration: underline;
+}
+.quick-contact {
+    text-align: left;
+    margin: 20px;
+    color: white;
+}
+.social-sharing{
+    margin-top: 15px;
+}
+
+.social-sharing a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+}
+
+.social-sharing a:hover {
+    text-decoration: underline;
+}
+.social-icon{
+    padding: 5px 5px;
+    color: white;
+}
+.privacy {
+    margin: 10px 0;
+    color: white;
+}
+.privacy a{
+    text-decoration:none;
+    color:white;
+}
+.privacy a:hover{
+    text-decoration: underline;
+}
+.copyright {
+    margin-top: 10px;
+}
