@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="add_book.css">
+    <title>Add Book</title>
+</head>
+<body>
+    <header>
+        <h1>Add a New Book</h1>
+    </header>
+    
+    <main>
+        <div class="form-container">
+            <form id="bookForm">
+                <div class="input-group">
+                    <label for="title">Book Title:</label>
+                    <input type="text" id="title" placeholder="Enter book title" required>
+                </div>
+                <div class="input-group">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" placeholder="Enter author name" required>
+                </div>
+                <div class="input-group">
+                    <label for="condition">Condition:</label>
+                    <select id="condition">
+                        <option value="Like New">Like New</option>
+                        <option value="Good">Good</option>
+                        <option value="Fair">Fair</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="price">Price (₹):</label>
+                    <input type="number" id="price" placeholder="Enter price" required>
+                </div>
+                <div class="input-group">
+                    <label for="image">Book Cover URL:</label>
+                    <input type="url" id="image" placeholder="Enter image URL" required>
+                </div>
+                <button type="submit" class="btn">Add Book</button>
+            </form>
+        </div>
+
+      
+                
+            </div>
+        </div>
+    </main>
+
+    <script src="add_book.js"></script>
+</body>
+</html>
