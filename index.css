@@ -1,3 +1,4 @@
+/* Default Light Mode */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,12 +6,14 @@ body {
     background-color: #f4f4f9;
     color: #333;
 }
+
 header {
     background-color: #4CAF50;
     color: white;
     padding: 1rem 2rem;
     text-align: center;
 }
+
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -19,20 +22,24 @@ nav {
     background-color: #333;
     padding: 0.5rem 0;
 }
+
 nav a {
     color: white;
     text-decoration: none;
     margin: 0 1rem;
     font-size: 1rem;
 }
+
 nav a:hover {
     text-decoration: underline;
 }
+
 .container {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
 }
+
 .book-card {
     display: grid;
     grid-template-columns: 0.5fr 2fr;
@@ -43,27 +50,33 @@ nav a:hover {
     margin-bottom: 1.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .book-card img {
     width: 100%;
     height: 200px;
     object-fit: contain;
 }
+
 .book-details {
     padding: 1rem;
 }
+
 .book-details h3 {
     margin: 0;
     font-size: 1.5rem;
     color: #4CAF50;
 }
+
 .book-details p {
     margin: 0.5rem 0;
 }
+
 .book-details .price {
     font-size: 1.2rem;
     color: #e63946;
     font-weight: bold;
 }
+
 footer {
     text-align: center;
     padding: 1rem 0;
@@ -71,6 +84,7 @@ footer {
     color: white;
     margin-top: 2rem;
 }
+
 .button {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -81,6 +95,72 @@ footer {
     font-weight: bold;
     margin-top: 0.5rem;
 }
-.button:hover {
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode nav {
+    background-color: #222;
+}
+
+body.dark-mode .book-card {
+    background: #333;
+    border: 1px solid #555;
+}
+
+body.dark-mode .book-details h3 {
+    color: #66bb6a;
+}
+
+body.dark-mode .book-details .price {
+    color: #ff5252;
+}
+
+body.dark-mode footer {
+    background-color: #222;
+}
+
+body.dark-mode .button {
+    background-color: #66bb6a;
+}
+
+body.dark-mode .button:hover {
+    background-color: #4CAF50;
+}
+
+/* Scroll to Top Button Styles */
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;  /* Make it circular */
+    display: none;  /* Hidden by default */
+    cursor: pointer;
+    z-index: 1000;  /* Keep it above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#scroll-to-top:hover {
     background-color: #45a049;
+}
+/* Dark Mode Toggle Icon */
+#dark-mode-toggle {
+    position: fixed;  /* Fixed at the top-right corner */
+    top: 10px;        /* Align to the top */
+    right: 20px;      /* Align to the right */
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;  /* Ensure it's on top of other elements */
 }
