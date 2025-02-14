@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css" />
+</head>
+
+<body>
+    <h2 class="cart-title">Shopping Cart</h2>
+    <ul id="cart-items" class="cart-list"></ul>
+    <p class="total-price-label">Total: $<span id="total-price">0</span></p>
+    <div style="display:flex;gap:30px">
+    <button onclick="clearCart()" class="clear-cart-btn">Clear Cart</button>
+    <button onclick="" class="clear-cart-btn">Buy Now</button>
+</div>
+    <br>
+    <br>
+    <br>
+    
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartList = document.getElementById("cart-items");
+            let totalPrice = 0;
+            
+            cartList.innerHTML = "";
+            cart.forEach(item => {
+                let li = document.createElement("li");
+                li.classList.add("cart-item");
+                li.innerHTML = `
+                    <div class="cart-item-info">
+                        <img src="https://${item.image}"  class="item-image">
+                        <div class="item-details">
+                            <p class="item-name">${item.name}</p>
+                            <p class="item-author"><strong>Author:</strong> ${item.author}</p>
+                            <p class="item-condition"><strong>Condition:</strong> ${item.condition}</p>
+                            <div class="item-quantity">
+                                <button class="quantity-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn" onclick="updateQuantity('${item.name}', 1)">+</button>
+                            </div>
+                            <p class="item-price"><span>$${item.price}</span> each</p>
+                        </div>
+                    </div>
+                `;
+                cartList.appendChild(li);
+                totalPrice += item.price * item.quantity;
+            });
+        
+            document.getElementById("total-price").textContent = totalPrice.toFixed(2);
+        }
+
+        function updateQuantity(itemName, change) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let item = cart.find(i => i.name === itemName);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    item.quantity = 1; // Prevent quantity from going below 1
+                }
+                localStorage.setItem("cart", JSON.stringify(cart));
+                loadCart();
+            }
+        }
+
+        function clearCart() {
+            localStorage.removeItem("cart");
+            loadCart();
+        }
+
+        loadCart();
+    </script>
+</body>
+
+</html>

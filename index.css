@@ -1,4 +1,5 @@
 body {
+    
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap:30px;
     background-color: #4CAF50;
     color: white;
     padding: 1rem 2rem;
@@ -277,3 +279,5 @@ nav {
     transform: scale(0.95);
     box-shadow: 0px 3px 10px rgba(255, 64, 108, 0.3);
 }
+
+
