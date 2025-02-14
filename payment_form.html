@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="payment_form.css">
+</head>
+
+<body>
+
+    <main>
+        <div id="popupMessage" class="popup">Payment Successful!</div>
+
+        <div class="container">
+            <form id ="paymentForm">
+                <div class="row">
+                    <div class="column">
+                        <h2 class="title">Billing Address</h2>
+                        <div class="input-box">
+                            <span>Full Name: </span>
+                            <input type="text" placeholder="Enter full name" required>
+                        </div>
+
+                        <div class="input-box">
+                            <span>Email: </span>
+                            <input type="email" placeholder="Enter valid email id" required>
+                        </div>
+
+                        <div class="input-box">
+                            <span>Address: </span>
+                            <input type="text" placeholder="Enter full address" required>
+                        </div>
+
+                        <div class="input-box">
+                            <span>City: </span>
+                            <input type="text" placeholder="Enter your city" required>
+                        </div>
+
+                        <div class="flex">
+                            <div class="input-box">
+                                <span>State: </span>
+                                <input type="text" placeholder="Enter your state" required>
+                            </div>
+
+                            <div class="input-box">
+                                <span>Pin Code: </span>
+                                <input type="number" placeholder="Enter pin-code" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="column">
+                        <h2 class="title">Payment</h2>
+
+                        <div class="input-box">
+                            <span>Cards Accepted: </span>
+                            <img src="imgcards.png" alt="">
+                        </div>
+
+                        <div class="input-box">
+                            <span>Name on Card: </span>
+                            <input type="text" id="nameOnCard" placeholder="Enter full name" required>
+                        </div>
+
+                        <div class="input-box">
+                            <span>Credit Card Number: </span>
+                            <input type="number" id="cardNumber" placeholder="1111 2222 3333 4444" required>
+                        </div>
+
+                        <div class="input-box">
+                            <span>Exp. Month: </span>
+                            <input type="text" id="expMonth" placeholder="February" required>
+                        </div>
+
+                        <div class="flex">
+                            <div class="input-box">
+                                <span>Exp. Year: </span>
+                                <input type="number" id="expYear" placeholder="2025" required>
+                            </div>
+
+                            <div class="input-box">
+                                <span>CVV: </span>
+                                <input type="number" id="cvv" placeholder="123" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Proceed to checkout</button>
+                <p id="successMessage" style="color: green; font-weight: bold;"></p>
+            </form>
+        </div>
+    </main>
+
+    <script src="payment_form.js"></script>
+</body>
+
+</html>
