@@ -22,3 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
         booksContainer.appendChild(bookCard);
     });
 });
+function addToCart(id, name, price,author,condition,image) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let existingProduct = cart.find(item => item.id === id);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({ id, name, price,author,condition,image, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Item added to cart!");
+}
