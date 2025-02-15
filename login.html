@@ -1,45 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="login.css" />
-    <!-- <link rel="stylesheet" href="/index.css" /> -->
-    <title>Login Page</title>
-  </head>
-  <body>
-    <main>
-      <div class="login-container">
-        <h2>Login</h2>
-        <form>
-          <div class="input-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div class="input-group">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter your password"
-              required
-            />
-          </div>
-          <button type="submit" class="btn">Login</button>
-          <div class="links">
-            <a href="#" class="forgot-password">Forgot Password?</a>
-            <a href="register.html" class="register">Register</a>
-          </div>
-        </form>
-      </div>
-    </main>
-    <footer>
-        <p>&copy; 2025 Second-Hand Bookstore. All Rights Reserved.</p>
-    </footer>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button class="back-button" onclick="window.location.href = 'index.html'">
+            <i class="fa-solid fa-arrow-left fa-xl"></i>
+        </button>
+    </nav>
+
+    <div class="login-wrapper">
+        <h2 class="login-title">Login</h2>
+        <input type="email" class="login-input" id="login-username" placeholder="Enter Email">
+        <input type="password" class="login-input" id="login-password" placeholder="Enter Password">
+        <button class="login-button" onclick="login()">Login</button>
+        <p class="login-text">Don't have an account? <a href="signup.html" class="login-link">Sign Up</a></p>
+        <p id="login-message" class="login-message"></p>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
 </html>

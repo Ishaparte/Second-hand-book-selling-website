@@ -1,4 +1,5 @@
 body {
+    
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap:30px;
     background-color: #4CAF50;
     color: white;
     padding: 1rem 2rem;
@@ -138,6 +140,87 @@ nav {
         max-width: 100%;
     }
 }
+
+/* Search bar style */
+.search-container {
+    position: relative;
+    margin: 15px auto;
+    width: 100%;
+    max-width: 450px; /* Ensures it doesn't get too large on big screens */
+    padding: 0 5px; /* Adds some spacing on small screens */
+}
+
+.search-bar {
+    width: 100%;
+    padding: 12px 50px 12px 15px; /* Ensures space for the button */
+    font-size: 16px;
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    outline: none;
+    transition: 0.3s ease;
+    box-sizing: border-box; /* Ensures padding doesn’t affect width */
+}
+
+.search-bar:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* ✖ Clear Button (Rightmost Inside Input) */
+.clear-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #007bff;
+    display: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.clear-btn:hover {
+    color: red;
+}
+
+/* 📱 Responsive Fixes */
+@media (max-width: 768px) {
+    .search-container {
+        width: 100%;
+        max-width: 100%; /* Uses full width */
+        padding: 0 5px;
+    }
+    
+    .search-bar {
+        font-size: 14px;
+        padding: 10px 45px 10px 15px; /* Adjust padding */
+    }
+
+    .clear-btn {
+        font-size: 16px;
+        right: 12px; /* Better positioning */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        width: 100%;
+        padding: 0 5px; /* Adds spacing for smaller screens */
+    }
+
+    .search-bar {
+        font-size: 14px;
+        padding: 10px 40px 10px 12px;
+        border-radius: 20px; /* Slightly smaller for compact UI */
+    }
+
+    .clear-btn {
+        font-size: 14px;
+        right: 10px;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -277,3 +360,5 @@ nav {
     transform: scale(0.95);
     box-shadow: 0px 3px 10px rgba(255, 64, 108, 0.3);
 }
+
+
