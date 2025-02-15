@@ -17,21 +17,43 @@ nav {
     align-items: center;
     height: 65px;
 }
-.logo{
-    line-height: 10px;
+.logo {
+    display: flex;
+    align-items: center; /* Aligns image and text horizontally */
+    gap: 12px; /* Space between image and text */
+    line-height: 1.2;
+}     
+
+.logo img {
+    width: 60px; /* Adjust the size */
+    height: 60px; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures it fills the space properly */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
 }
-.logo h2{
+
+.text {
+    display: flex;
+    flex-direction: column; /* Stack elements in a column */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Align text to the center */
+    gap: 1px; /* Add spacing between the elements */
+}
+
+.text h2 {
     font-size: 24px;
     font-family: 'Times New Roman', Times, serif;
     color: #f8f9fa;
-    
-    
+    margin-bottom: 5px; /* Space between h2 and p */
 }
-.logo p{
+
+.text p {
+    font-size: 16px;
     font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #f8f9fa;
+    color: #e0e0e0;
 }
+
 .nav {
     display: flex;
    gap: 15px;
