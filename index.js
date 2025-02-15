@@ -35,3 +35,107 @@ function addToCart(id, name, price,author,condition,image) {
     localStorage.setItem("cart", JSON.stringify(cart));
     alert("Item added to cart!");
 }
+
+function login() {
+  let username = document.getElementById("login-username").value.trim();
+  let password = document.getElementById("login-password").value.trim();
+  let message = document.getElementById("login-message");
+
+  // Validation: Check if fields are empty
+  if (!username || !password) {
+      message.style.color = "red";
+      message.innerText = "Please enter both email and password.";
+      return;
+  }
+
+  // Get stored user data
+  let storedUserData = localStorage.getItem(username);
+
+  if (storedUserData) {
+      let userData = JSON.parse(storedUserData); // Parse JSON data
+
+document.addEventListener("DOMContentLoaded", function () {
+  const text = "Coding Club";
+  let index = 0;
+
+  function typeEffect() {
+      document.getElementById("typingText").textContent = text.slice(0, index);
+      index++;
+
+      if (index <= text.length) {
+          setTimeout(typeEffect, 100); 
+      }
+       else{
+         document.getElementById("typingText").style.borderRight = "none"; 
+       }
+  }
+  typeEffect();
+});
+
+      if (userData.password === password) {
+          localStorage.setItem("loggedInUser", username);
+          message.style.color = "green";
+          message.innerText = "Login successful! Redirecting...";
+          setTimeout(() => window.location.href = "index.html", 2000);
+      } else {
+          message.style.color = "red";
+          message.innerText = "Invalid credentials!";
+      }
+  } else {
+      message.style.color = "red";
+      message.innerText = "User not found!";
+  }
+}
+
+function login() {
+    let email = document.getElementById("login-username").value.trim();
+    let password = document.getElementById("login-password").value.trim();
+    let message = document.getElementById("login-message");
+
+    // Validation: Check if fields are empty
+    if (!email || !password) {
+        message.style.color = "red";
+        message.innerText = "Please enter both email and password.";
+        return;
+    }
+
+    // Get stored user data using email (correct key)
+    let storedUserData = localStorage.getItem(email);
+
+    if (storedUserData) {
+        let userData = JSON.parse(storedUserData); // Parse JSON data
+
+        if (userData.password === password) {
+            localStorage.setItem("loggedInUser", email);
+            message.style.color = "green";
+            message.innerText = "Login successful! Redirecting...";
+            setTimeout(() => window.location.href = "index.html", 2000);
+        } else {
+            message.style.color = "red";
+            message.innerText = "Invalid credentials!";
+        }
+    } else {
+        message.style.color = "red";
+        message.innerText = "User not found!";
+    }
+}
+
+// Move this function outside of login()
+document.addEventListener("DOMContentLoaded", function () {
+    const text = "Coding Club";
+    let index = 0;
+
+    function typeEffect() {
+        document.getElementById("typingText").textContent = text.slice(0, index);
+        index++;
+
+        if (index <= text.length) {
+            setTimeout(typeEffect, 100); 
+        } else {
+            document.getElementById("typingText").style.borderRight = "none"; 
+        }
+    }
+    typeEffect();
+});
+
+  
