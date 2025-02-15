@@ -33,6 +33,12 @@
         </div>
       </nav>
   </header>
+
+  <div class="search-container">
+    <input type="text" class="search-bar" id="searchInput" placeholder="Search books by title or author..." onkeyup="searchBooks()">
+    <button class="clear-btn" id="clearBtn" onclick="clearSearch()">✖</button>
+  </div>
+
   <div class="container">
     <div class="book-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/220px-The_Great_Gatsby_Cover_1925_Retouched.jpg" alt="Book Cover">

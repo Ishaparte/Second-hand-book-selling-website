@@ -22,6 +22,36 @@ document.addEventListener("DOMContentLoaded", function () {
         booksContainer.appendChild(bookCard);
     });
 });
+
+function searchBooks() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let bookCards = document.querySelectorAll(".book-card");
+    let clearBtn = document.getElementById("clearBtn");
+
+    bookCards.forEach(card => {
+        let title = card.querySelector("h3").textContent.toLowerCase();
+        let author = card.querySelector("p").textContent.toLowerCase();
+
+        if (title.includes(input) || author.includes(input)) {
+            card.style.display = "block"; 
+        } else {
+            card.style.display = "none"; 
+        }
+    });
+
+    // Show clear button if there's input
+    clearBtn.style.display = input.length > 0 ? "block" : "none";
+}
+
+function clearSearch() {
+    document.getElementById("searchInput").value = "";
+    document.getElementById("clearBtn").style.display = "none";
+    let bookCards = document.querySelectorAll(".book-card");
+    bookCards.forEach(card => {
+        card.style.display = "block"; 
+    });
+}
+
 function addToCart(id, name, price,author,condition,image) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let existingProduct = cart.find(item => item.id === id);
