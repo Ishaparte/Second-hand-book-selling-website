@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Second-Hand Bookstore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            color: #1f618d;
+        }
+        .answer {
+            display: none;
+            padding-top: 10px;
+            color: #555;
+        }
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <input type="text" class="search-box" placeholder="Search FAQ..." onkeyup="searchFAQ()">
+
+        <div class="faq-item">
+            <p class="question" onclick="toggleAnswer(this)">📚 How can I buy a book?</p>
+            <p class="answer">Simply click on the "Buy Now" button next to the book you want to purchase.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question" onclick="toggleAnswer(this)">🛒 How does the "Add to Cart" option work?</p>
+            <p class="answer">When you click "Add to Cart," the book is saved in your cart until you decide to check out.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question" onclick="toggleAnswer(this)">📦 What are the delivery options?</p>
+            <p class="answer">We offer standard and express delivery options. You can select your preference during checkout.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question" onclick="toggleAnswer(this)">🔄 Can I return a book?</p>
+            <p class="answer">Yes, returns are accepted within 7 days if the book is in the same condition as purchased.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question" onclick="toggleAnswer(this)">🔐 How do I create an account?</p>
+            <p class="answer">Click on the "Register" option on the homepage and fill in your details to sign up.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question" onclick="toggleAnswer(this)">📖 How can I sell a book?</p>
+            <p class="answer">To sell a book, visit our "Sell A Book" page, fill in the details, and list your book for sale.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question" onclick="toggleAnswer(this)">📂 What categories of books are available?</p>
+            <p class="answer">We have a variety of categories including Fiction, Non-Fiction, Textbooks, Mystery, Sci-Fi, Romance, and many more.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAnswer(element) {
+            let answer = element.nextElementSibling;
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        }
+
+        function searchFAQ() {
+            let input = document.querySelector('.search-box').value.toLowerCase();
+            let questions = document.querySelectorAll('.faq-item');
+
+            questions.forEach(item => {
+                let text = item.textContent.toLowerCase();
+                item.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
+
+</body>
+</html>
