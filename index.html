@@ -6,7 +6,73 @@
     <title>Second-Hand Bookstore</title>
     <link rel="stylesheet" href="index.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
+      }
+      body {
+          background-color: #f5f5f5;
+          color: #333;
+          padding: 20px;
+      }
+      .testimonial-section {
+          max-width: 800px;
+          margin: auto;
+          text-align: center;
+          padding: 40px 20px;
+          margin-top: 10px;
+          margin-bottom: 50px;
+          background: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+          color: #2c3e50;
+          margin-bottom: 20px;
+      }
+      .testimonials {
+          display: flex;
+          overflow: hidden;
+          position: relative;
+      }
+      .testimonial {
+          min-width: 100%;
+          padding: 20px;
+          text-align: center;
+          animation: slide 15s infinite;
+      }
+      @keyframes slide {
+          0%, 100% { transform: translateX(0); }
+          25% { transform: translateX(-100%); }
+          50% { transform: translateX(-200%); }
+          75% { transform: translateX(-300%); }
+      }
+      .profile-img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 10px;
+          border: 3px solid #2c3e50;
+      }
+      .testimonial p {
+          font-style: italic;
+          font-size: 16px;
+          margin-bottom: 10px;
+      }
+      .testimonial h4 {
+          color: #1f618d;
+          font-size: 18px;
+          margin-top: 10px;
+      }
+      .stars {
+          color: #f4c542;
+          font-size: 18px;
+      }
+  </style>  
 </head>
 <body>
   <header>
@@ -33,7 +99,6 @@
         <a href="category.html">Categories</a>
         <a href="add_book.html">Sell a Book</a>
         <a href="contact.html">Contact Us</a>
-        <a href="review.html">Testimonial</a>
         <a href="../Second-hand-book-selling-website/login.html">Login</a>
         </div>
       </nav>
@@ -85,7 +150,42 @@
       <h2>Available Books</h2>
       <div id="booksContainer"></div> 
   </div>
-  
+  <section>
+    <div class="testimonial-section">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials">
+            
+            <div class="testimonial">
+                <img src="https://i.pravatar.cc/80?img=5" alt="Sarah M." class="profile-img">
+                <p>"Amazing collection of books at affordable prices! Will definitely buy again."</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <h4>- Sarah M.</h4>
+            </div>
+
+            <div class="testimonial">
+                <img src="https://i.pravatar.cc/80?img=12" alt="John D." class="profile-img">
+                <p>"The book condition was excellent, and the delivery was super fast!"</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <h4>- John D.</h4>
+            </div>
+
+            <div class="testimonial">
+                <img src="https://i.pravatar.cc/80?img=19" alt="Lisa K." class="profile-img">
+                <p>"Great platform for second-hand books. I even sold some of my old books easily!"</p>
+                <div class="stars">⭐⭐⭐⭐</div>
+                <h4>- Lisa K.</h4>
+            </div>
+
+            <div class="testimonial">
+                <img src="https://i.pravatar.cc/80?img=25" alt="Mark T." class="profile-img">
+                <p>"A hidden gem for book lovers. Highly recommended!"</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <h4>- Mark T.</h4>
+            </div>
+
+        </div>
+    </div>
+</section>
     <footer class="footer">
       <div class="wrapper">
         <div class="newsletter">
