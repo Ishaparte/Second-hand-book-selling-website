@@ -1,50 +1,49 @@
 body {
-    
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
 }
+
+/* Navigation */
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap:30px;
     background-color: #4CAF50;
     color: white;
     padding: 1rem 2rem;
-    align-items: center;
     height: 65px;
+    position: relative;
 }
+
 .logo {
     display: flex;
-    align-items: center; /* Aligns image and text horizontally */
-    gap: 12px; /* Space between image and text */
-    line-height: 1.2;
-}     
+    align-items: center;
+    gap: 12px;
+}
 
 .logo img {
-    width: 60px; /* Adjust the size */
-    height: 60px; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensures it fills the space properly */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .text {
     display: flex;
-    flex-direction: column; /* Stack elements in a column */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Align text to the center */
-    gap: 1px; /* Add spacing between the elements */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .text h2 {
     font-size: 24px;
     font-family: 'Times New Roman', Times, serif;
     color: #f8f9fa;
-    margin-bottom: 5px; /* Space between h2 and p */
+    margin-bottom: 5px;
 }
 
 .text p {
@@ -56,138 +55,116 @@ nav {
 
 .nav {
     display: flex;
-   gap: 15px;
+    gap: 15px;
 }
+
 .nav a {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   font-weight: bold;
+    font-weight: bold;
     color: #f8f9fa;
     text-decoration: none;
     padding: 10px;
-    position: relative;
     font-size: 20px;
     transition: all 0.3s ease-in-out;
+    position: relative;
 }
-.nav a::after{
-    content: " ";
+
+.nav a::after {
+    content: "";
     position: absolute;
     left: 0;
     bottom: -3px;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg,#ffdd57,#ff6699);
+    background: linear-gradient(90deg, #ffdd57, #ff6699);
     transform: scaleX(0);
-    transition:transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
-.nav a:hover::after{
+
+.nav a:hover::after {
     transform: scaleX(1);
 }
+
 .nav a:hover {
-   color: #ffeb3b;
-   text-shadow: 0px 0px 5px rgba(255,235,59,0.7);
+    color: #ffeb3b;
+    text-shadow: 0px 0px 5px rgba(255, 235, 59, 0.7);
 }
-.ham{
+
+/* Hamburger Menu */
+.ham {
     display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
-#menu{
+
+#menu {
     display: none;
 }
-.ham span{
-  display: block;
-  width: 35px;
-  height: 4px;
-  background-color: white;
-  border-radius: 2px;
-  transition: 0.3s;
-  left: 90px;
 
+.ham span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
 }
 
-@media screen and (max-width:851px){
-    .nav{
-         display: none;
-         flex-direction: column;
-         position: absolute;
-         top: 100px;
-         left: 0;
-         width: 100%;
-         background: linear-gradient(to bottom,#2d7a3e,#3fa34d);
-         box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-         border-radius: 5px;
-         text-align: center;
+/* Responsive Navigation */
+@media screen and (max-width: 851px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to bottom, #2d7a3e, #3fa34d);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        text-align: center;
+        z-index: 1000;
     }
-    .nav a{
+
+    .nav a {
         display: block;
         padding: 15px;
-        position: relative;
-       text-decoration: none;
-       color: white;
-       position: relative;
-      
     }
-    .nav a:hover{
-        color: white;
-        transform: scale(1.05);
-        text-decoration: none;
-    
-    }
-    .nav a::after{
-        content: " ";
-        position: absolute;
-        left: 0;
-        bottom: -3px;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg,#ffdd57,#ff6699);
-        transform: scaleX(0);
-        transition:transform 0.3s ease-in-out;
-    }
-    .nav a:hover::after{
-        transform: scaleX(1);
-    }
-    .ham{
+
+    .ham {
         display: flex;
     }
 
-    #menu:checked~ .nav{
-           display: flex;
-    }
-   
-}
-@media (max-width:675px){
-    .nav{
-        max-width: 100%;
+    #menu:checked ~ .nav {
+        display: flex;
     }
 }
 
-/* Search bar style */
+/* Search Bar */
 .search-container {
     position: relative;
     margin: 15px auto;
     width: 100%;
-    max-width: 450px; /* Ensures it doesn't get too large on big screens */
-    padding: 0 5px; /* Adds some spacing on small screens */
+    max-width: 450px;
+    padding: 0 5px;
 }
 
 .search-bar {
     width: 100%;
-    padding: 12px 50px 12px 15px; /* Ensures space for the button */
+    padding: 12px 50px 12px 15px;
     font-size: 16px;
     border: 2px solid #007bff;
     border-radius: 25px;
     outline: none;
     transition: 0.3s ease;
-    box-sizing: border-box; /* Ensures padding doesn’t affect width */
+    box-sizing: border-box;
 }
 
-.search-bar:focus {
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-}
-
-/* ✖ Clear Button (Rightmost Inside Input) */
 .clear-btn {
     position: absolute;
     right: 15px;
@@ -199,55 +176,19 @@ nav {
     font-size: 18px;
     color: #007bff;
     display: none;
-    transition: opacity 0.2s ease-in-out;
 }
 
 .clear-btn:hover {
     color: red;
 }
 
-/* 📱 Responsive Fixes */
-@media (max-width: 768px) {
-    .search-container {
-        width: 100%;
-        max-width: 100%; /* Uses full width */
-        padding: 0 5px;
-    }
-    
-    .search-bar {
-        font-size: 14px;
-        padding: 10px 45px 10px 15px; /* Adjust padding */
-    }
-
-    .clear-btn {
-        font-size: 16px;
-        right: 12px; /* Better positioning */
-    }
-}
-
-@media (max-width: 480px) {
-    .search-container {
-        width: 100%;
-        padding: 0 5px; /* Adds spacing for smaller screens */
-    }
-
-    .search-bar {
-        font-size: 14px;
-        padding: 10px 40px 10px 12px;
-        border-radius: 20px; /* Slightly smaller for compact UI */
-    }
-
-    .clear-btn {
-        font-size: 14px;
-        right: 10px;
-    }
-}
-
+/* Book Cards */
 .container {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
 }
+
 .book-card {
     display: grid;
     grid-template-columns: 0.5fr 2fr;
@@ -258,107 +199,158 @@ nav {
     margin-bottom: 1.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .book-card img {
     width: 100%;
     height: 200px;
     object-fit: contain;
 }
+
 .book-details {
     padding: 1rem;
 }
+
 .book-details h3 {
     margin: 0;
     font-size: 1.5rem;
     color: #4CAF50;
 }
-.book-details p {
-    margin: 0.5rem 0;
-}
-.book-details .price {
-    font-size: 1.2rem;
-    color: #e63946;
-    font-weight: bold;
-}
 
+/* Footer */
 .footer {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background: #333;
     color: white;
     padding: 5px 20px;
     text-align: center;
 }
-.wrapper{
+
+.wrapper {
     display: flex;
     justify-content: space-between;
-}
-.newsletter {
-    margin: 20px;
-    
-}
-
-.subscribeform{
-    display: flex;
-    flex-direction: column;
 }
 
 .newsletter input {
     padding: 10px;
-    margin-right: 5px;
     margin-bottom: 10px;
 }
-.submitbutton{
-    max-width: 245px;
-    
-}
-.sec-nav{
-    padding: 3px;
-    color: white;
-}
-.sec-nav a{
-    color:white;
-    text-decoration: none;
-}
-.sec-nav a:hover{
-    text-decoration: underline;
-}
-.quick-contact {
-    text-align: left;
-    margin: 20px;
-    color: white;
+
+/* Responsive Design for Small Screens */
+@media (max-width: 425px) {
+    nav {
+        /* flex-direction: column; */
+        padding: 1rem;
+        height: auto;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .text h2 {
+        font-size: 20px;
+    }
+
+    .text p {
+        font-size: 14px;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    .nav a {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .search-container {
+        max-width: 90%;
+    }
+
+    .book-card {
+        grid-template-columns: 1fr;
+    }
+
+    .book-card img {
+        height: 150px;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-.social-sharing a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-    display: flex;
-}
-.social-sharing div {   
-    margin-left:6px;
+@media (max-width: 375px) {
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
 
+    .text h2 {
+        font-size: 18px;
+    }
+
+    .text p {
+        font-size: 12px;
+    }
+
+    .nav a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .search-bar {
+        font-size: 14px;
+        padding: 10px 35px 10px 10px;
+    }
+
+    .clear-btn {
+        right: 8px;
+    }
+
+    .book-details h3 {
+        font-size: 1.2rem;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
 }
-.social-sharing a:hover {
-    text-decoration: underline;
-}
-.social-icon{
-    padding: 5px 5px;
-    color: white;
-}
-.privacy {
-    margin: 10px 0;
-    color: white;
-}
-.privacy a{
-    text-decoration:none;
-    color:white;
-}
-.privacy a:hover{
-    text-decoration: underline;
-}
-.copyright {
-    margin-top: 10px;
+
+@media (max-width: 320px) {
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .text h2 {
+        font-size: 16px;
+    }
+
+    .text p {
+        font-size: 11px;
+    }
+
+    .nav a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .book-card img {
+        height: 120px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }
 
 .button {
@@ -385,5 +377,3 @@ nav {
     transform: scale(0.95);
     box-shadow: 0px 3px 10px rgba(255, 64, 108, 0.3);
 }
-
-
