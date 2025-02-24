@@ -234,15 +234,40 @@ nav {
         min-width: 100px;
         margin: 30px;
     }
-    
-    
 }
+
+.footer {
+    background-color: #6f1818;
+    color: #421b1b;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center; /* Center the footer content horizontally */
+    align-items: center; /* Center the footer content vertically */
+    flex-direction: column; /* Arrange footer items in a column */
+    text-align: center; /* Center-align the text */
+}
+
+.footer-container div {
+    margin: 10px 0;
+}
+
+.footer-about h3 p {
+    font-size: 24px;
+    margin-bottom: 0px;
+    background-color: rgb(20, 21, 21);
+    color: #f4eded;
+}
+ 
 .footer {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 10;
     background: #333;
-    color: #FFFFFF;
+    color: #f4eded;
     padding: 5px 20px;
     text-align: center;
     width: 100vw;
