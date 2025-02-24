@@ -4,8 +4,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px; /* Added padding for smaller screens */
 }
 
 header {
@@ -22,11 +23,11 @@ header {
 
 form {
     background: linear-gradient(135deg, #ffffff, #ffeb3b);
-    padding: 50px;
+    padding: 30px; /* Reduced padding for smaller screens */
     border-radius: 16px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     width: 100%; /* Takes the full width of the container */
-    min-width: 600px; /* Enforces a minimum width */
+    min-width: 300px; /* Adjusted minimum width for smaller screens */
     animation: fadeIn 1s ease-out;
 }
 
@@ -43,15 +44,15 @@ form {
 
 form h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* Reduced margin for smaller screens */
     color: #ff6f00;
-    font-size: 2rem;
+    font-size: 1.8rem; /* Adjusted font size for smaller screens */
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(255, 87, 34, 0.5);
 }
 
 .input-group {
-    margin-bottom: 24px;
+    margin-bottom: 20px; /* Reduced margin for smaller screens */
 }
 
 label {
@@ -59,18 +60,19 @@ label {
     font-weight: bold;
     margin-bottom: 8px;
     color: #f57c00;
-    font-size: 1.1rem;
+    font-size: 1rem; /* Adjusted font size for smaller screens */
 }
 
 input, select {
     width: 100%;
-    padding: 14px;
+    padding: 12px 16px; /* Improved padding for better visual balance */
     border: 2px solid #ffcc80;
     border-radius: 10px;
-    font-size: 1.1rem;
+    font-size: 1rem; /* Adjusted font size for smaller screens */
     transition: border-color 0.3s, box-shadow 0.3s;
     background-color: #fff3e0;
     color: #5d4037;
+    box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
 input:focus, select:focus {
@@ -85,8 +87,8 @@ input::placeholder {
 
 .btn {
     width: 100%;
-    padding: 16px;
-    font-size: 1.2rem;
+    padding: 14px; /* Reduced padding for smaller screens */
+    font-size: 1.1rem; /* Adjusted font size for smaller screens */
     font-weight: bold;
     background: linear-gradient(135deg, #ff7043, #ff5722);
     color: white;
@@ -134,3 +136,56 @@ input::placeholder {
     transform: scale(0.98);
 }
 
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Further reduced padding for smaller screens */
+    }
+
+    form {
+        padding: 20px; /* Further reduced padding for smaller screens */
+        min-width: 100%; /* Full width for smaller screens */
+    }
+
+    form h1 {
+        font-size: 1.5rem; /* Adjusted font size for smaller screens */
+    }
+
+    label {
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+    }
+
+    input, select {
+        padding: 10px 14px; /* Improved padding for smaller screens */
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+    }
+
+    .btn {
+        padding: 12px; /* Further reduced padding for smaller screens */
+        font-size: 1rem; /* Adjusted font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 15px; /* Further reduced padding for very small screens */
+    }
+
+    form h1 {
+        font-size: 1.3rem; /* Adjusted font size for very small screens */
+    }
+
+    label {
+        font-size: 0.8rem; /* Adjusted font size for very small screens */
+    }
+
+    input, select {
+        padding: 8px 12px; /* Improved padding for very small screens */
+        font-size: 0.8rem; /* Adjusted font size for very small screens */
+    }
+
+    .btn {
+        padding: 10px; /* Further reduced padding for very small screens */
+        font-size: 0.9rem; /* Adjusted font size for very small screens */
+    }
+}
