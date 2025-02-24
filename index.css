@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #c9c3c3;
     color: #333;
 }
 nav {
@@ -11,7 +11,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap:30px;
-    background-color: #4CAF50;
+    background-color: #206922;
     color: white;
     padding: 1rem 2rem;
     align-items: center;
@@ -269,7 +269,7 @@ nav {
 .book-details h3 {
     margin: 0;
     font-size: 1.5rem;
-    color: #4CAF50;
+    color: #ed58bb;
 }
 .book-details p {
     margin: 0.5rem 0;
@@ -284,8 +284,8 @@ nav {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #333;
-    color: white;
+    background: #583e79;
+    color: rgb(217, 231, 244);
     padding: 5px 20px;
     text-align: center;
 }
