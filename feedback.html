@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Second-hand Book Selling</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+    <div class="feedback-container">
+        <h2>🌟 Share Your Feedback</h2>
+        <p>Your thoughts help us improve! Please rate your experience.</p>
+
+        <form id="feedback-form">
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Your Email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Rate Us</label>
+                <div class="star-rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <textarea id="message" rows="4" placeholder="Write your feedback..." maxlength="300"></textarea>
+                <p class="char-count"><span id="char-count">300</span> characters left</p>
+            </div>
+
+            <button type="submit" class="submit-btn">🚀 Submit Feedback</button>
+        </form>
+    </div>
+
+    <script src="feedback.js"></script>
+</body>
+</html>
